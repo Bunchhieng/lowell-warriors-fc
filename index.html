@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="lowell-warriors-ico.ico" />
+    <title>Lowell Warriors FC</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        background-color: #f4f7f6;
+        color: #333740;
+        text-align: center;
+      }
+      .container {
+        max-width: 960px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(to right, #252e48, #635bff);
+        color: #ffffff;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+      .header h1 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 2rem; /* Adjust font size for modern look */
+      }
+      .carousel {
+        position: relative;
+        margin: 1rem 0;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+      .carousel img {
+        width: 100%;
+        display: none;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .carousel img.active {
+        display: block;
+        opacity: 1;
+      }
+      .carousel-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .carousel-indicator {
+        padding: 5px;
+        margin: 0 5px;
+        cursor: pointer;
+        background: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .carousel-indicator.active {
+        background: #717171;
+      }
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #635bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        user-select: none;
+        z-index: 100;
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+      .intro {
+        background: #e3f2fd;
+        padding: 1rem;
+        font-size: 1rem;
+        color: #333740;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+      }
+      .facebook-link {
+        margin: 1rem 0;
+      }
+      .facebook-link a {
+        display: inline-block;
+        background: #4caf50;
+        color: #ffffff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .facebook-link a:hover {
+        background: #388e3c;
+        transform: scale(1.05);
+      }
+      footer {
+        background: #263238;
+        color: #f6f9fc;
+        font-size: 0.875rem;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+      @media (max-width: 1024px) {
+        .header h1,
+        .intro,
+        footer {
+          font-size: 1.2rem; /* Slightly smaller font size for tablets and large phones */
+        }
+
+        .prev,
+        .next {
+          font-size: 1rem;
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+          margin: 1rem;
+        }
+
+        .header h1 {
+          font-size: 1.5rem; /* Adjust the font size for small tablets and large phones */
+        }
+
+        .carousel img {
+          height: auto; /* Ensure images scale correctly */
+        }
+
+        .prev,
+        .next {
+          font-size: 0.8rem;
+          padding: 5px;
+        }
+
+        /* Adjustments for smaller screens like mobile phones */
+        .intro,
+        .facebook-link a,
+        footer {
+          padding: 0.5rem; /* Reduced padding */
+          font-size: 1rem; /* Smaller font size */
+        }
+
+        .facebook-link a {
+          padding: 0.5rem 1rem; /* Smaller button padding */
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header h1 {
+          font-size: 1.3rem; /* Even smaller font size for very small devices */
+        }
+
+        .carousel img {
+          max-width: 100%;
+          height: auto; /* Adjust carousel images for very small screens */
+        }
+
+        .prev,
+        .next {
+          display: none; /* Hide carousel buttons on very small screens */
+        }
+
+        .facebook-link a {
+          padding: 0.4rem 0.8rem; /* Further reduce button padding */
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          src="lowell-warriors-logo.JPG"
+          alt="Lowell Warriors FC Logo"
+          style="max-height: 60px; margin-right: 10px"
+        />
+        <h1>Lowell Warriors FC</h1>
+      </header>
+
+      <div class="intro">
+        ⚽ Lowell Warriors FC: Lowell's heart of soccer. Passion, teamwork, and
+        community spirit in every match. Join us and be a part of the thrill!
+        🏆🤝
+      </div>
+      <div class="carousel">
+        <img
+          src="warriors1.jpeg"
+          alt="Lowell Warriors FC Team Photo 1"
+          class="active"
+        />
+        <img src="warriors2.jpeg" alt="Lowell Warriors FC Team Photo 2" />
+        <img src="warriors3.JPG" alt="Lowell Warriors FC Team Photo 3" />
+        <img src="warriors4.jpg" alt="Lowell Warriors FC Team Photo 4" />
+        <img src="warriors5.JPG" alt="Lowell Warriors FC Team Photo 5" />
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      <footer
+        style="
+          background: linear-gradient(to right, #252e48, #635bff);
+          color: #f6f9fc;
+          padding: 2rem 0;
+          font-size: 0.875rem;
+          text-align: center;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+        "
+      >
+        <div style="margin-bottom: 1rem">
+          <a
+            href="https://www.facebook.com/profile.php?id=61555674030331"
+            target="_blank"
+            style="
+              display: inline-block;
+              background: rgba(255, 255, 255, 0.1);
+              color: #ffffff;
+              padding: 0.75rem 1.5rem;
+              border-radius: 4px;
+              text-decoration: none;
+              font-weight: 700;
+              transition: background-color 0.3s, transform 0.3s;
+              font-size: 1rem;
+            "
+          >
+            <i
+              class="fab fa-facebook-f"
+              style="margin-right: 8px; font-size: 1.2rem"
+            ></i>
+            Visit Our Facebook Page
+          </a>
+        </div>
+        &copy; 2024 Lowell Warriors FC. All Rights Reserved.
+      </footer>
+    </div>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+      function showSlides() {
+        let i;
+        let slides = document.querySelectorAll(".carousel img");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+
+      function moveSlide(n) {
+        slideIndex += n - 1;
+        showSlides();
+      }
+    </script>
+  </body>
+</html>
